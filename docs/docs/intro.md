@@ -1,77 +1,106 @@
 ---
 sidebar_position: 1
-title: "Introduction"
-description: "Welcome to this guide - your comprehensive resource for mastering the topic"
+title: "How Linux Works"
+description: "Master Linux internals - from the kernel to user space, networking to virtualization"
 slug: /
 ---
 
-import { ProcessFlow, colors } from '@site/src/components/diagrams';
+import { CardGrid, StackDiagram, colors } from '@site/src/components/diagrams';
 
-# Welcome
+# How Linux Works
 
-> **"Your inspiring quote here"**
->
-> — Attribution
-
-Welcome to this guide — your comprehensive resource for mastering this topic.
+> **"The best way to learn how Linux works is to understand its layers."**
 
 ---
 
-## Table of Contents
+## What You'll Learn
 
-1. [What You'll Learn](#1-what-youll-learn)
-2. [Who This Guide Is For](#2-who-this-guide-is-for)
-3. [How to Use This Guide](#3-how-to-use-this-guide)
-4. [Prerequisites](#4-prerequisites)
+This guide takes you from the fundamentals of Linux system architecture through advanced topics like virtualization and containers. Each chapter builds on the previous, giving you a complete understanding of how Linux operates.
+
+<CardGrid cards={[
+  {
+    title: "System Fundamentals",
+    description: "Understand the big picture, basic commands, and device management",
+    color: colors.blue,
+    items: ["Kernel vs User Space", "Shell Commands", "Device Files"]
+  },
+  {
+    title: "Storage & Boot",
+    description: "Master disks, filesystems, and the boot process",
+    color: colors.purple,
+    items: ["Partitions & Filesystems", "GRUB & Boot", "systemd"]
+  },
+  {
+    title: "System Management",
+    description: "Configure your system and manage processes",
+    color: colors.green,
+    items: ["System Configuration", "Process Management", "Resource Monitoring"]
+  },
+  {
+    title: "Networking",
+    description: "Configure networks and transfer files",
+    color: colors.orange,
+    items: ["Network Configuration", "SSH & Services", "File Transfer"]
+  },
+  {
+    title: "Shell & Desktop",
+    description: "Write scripts and understand the desktop environment",
+    color: colors.cyan,
+    items: ["Shell Scripts", "User Environments", "X11 & Wayland"]
+  },
+  {
+    title: "Development",
+    description: "Use development tools and understand virtualization",
+    color: colors.red,
+    items: ["Compilers & Make", "Building from Source", "Containers & VMs"]
+  }
+]} columns={3} />
 
 ---
 
-## 1. What You'll Learn
+## The Linux System Architecture
 
-**In plain English:** What this guide teaches in simple terms.
-
-**In technical terms:** The precise skills and knowledge you'll gain.
-
-**Why it matters:** How this knowledge benefits you in real-world scenarios.
-
----
-
-## 2. Who This Guide Is For
-
-This guide is designed for:
-
-| Role | What You'll Gain |
-|------|-----------------|
-| **Beginners** | Solid foundation in core concepts |
-| **Practitioners** | Practical implementation skills |
-| **Leaders** | Strategic understanding for decision-making |
-
----
-
-## 3. How to Use This Guide
-
-<ProcessFlow
-  steps={[
-    { title: "Part I", description: "Build mental models", icon: "1", color: colors.blue },
-    { title: "Part II", description: "Get hands-on", icon: "2", color: colors.purple },
-    { title: "Part III", description: "Scale your practice", icon: "3", color: colors.green }
+<StackDiagram
+  title="Linux System Layers"
+  layers={[
+    { label: "User Applications", color: colors.blue, items: ["Browsers", "Editors", "Shells", "Utilities"] },
+    { label: "System Libraries", color: colors.purple, items: ["glibc", "libpthread", "libm"] },
+    { label: "System Calls", color: colors.green, items: ["read()", "write()", "fork()", "exec()"] },
+    { label: "Linux Kernel", color: colors.orange, items: ["Process Scheduler", "Memory Manager", "Device Drivers", "Filesystems"] },
+    { label: "Hardware", color: colors.slate, items: ["CPU", "Memory", "Storage", "Network"] }
   ]}
 />
 
-**If you're new:** Start from the beginning to build a solid foundation.
+---
 
-**If you're experienced:** Jump directly to the chapter most relevant to your needs.
+## Learning Path
+
+### Part I: System Fundamentals (Chapters 1-3)
+Start here to understand the core concepts of Linux - how the kernel relates to user space, essential commands, and how devices work.
+
+### Part II: Storage & Boot (Chapters 4-6)
+Learn how disks and filesystems work, understand the boot process from BIOS to user space, and master systemd.
+
+### Part III: System Management (Chapters 7-8)
+Configure your system, manage processes, and monitor resources effectively.
+
+### Part IV: Networking (Chapters 9-10, 12)
+Understand network configuration, network services, and file transfer methods.
+
+### Part V: Shell & Desktop (Chapters 11, 13-14)
+Write shell scripts, customize your environment, and understand the desktop stack.
+
+### Part VI: Development (Chapters 15-17)
+Use development tools, compile software from source, and understand virtualization.
 
 ---
 
-## 4. Prerequisites
+## Prerequisites
 
-To get the most from this guide:
-
-- Basic understanding of the domain
-- Familiarity with relevant tools
-- Access to a development environment
+- Basic familiarity with using a terminal
+- Access to a Linux system (virtual machine works great)
+- Curiosity about how things work under the hood
 
 ---
 
-**Ready to begin?** Add your chapters and start learning!
+**Ready to begin?** Start with [Chapter 1: The Big Picture](/system-fundamentals/ch01-big-picture).
